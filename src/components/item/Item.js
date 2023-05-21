@@ -9,6 +9,28 @@ import { CartContext } from "../../App";
 export default function Item() {
   const { cart, setCart } = useContext(CartContext);
 
+  function onItemAddToCart() {
+    const newItems = [...cart.items];
+    const itemInCart = newItems.find((item) => item.id === itemID);
+    if (itemInCart) {
+      itemInCart.quantity++;
+    } else {
+      newItems.push({ id: itemID, quantity: 1 });
+    }
+    const newSubtotal = newItems.reduce(
+      (acc, item) => acc + getItemById(item.id).price * item.quantity,
+      0
+    );
+    const newTax = newSubtotal * 0.07;
+    const newTotal = newSubtotal + newTax;
+    setCart({
+      items: newItems,
+      subtotal: newSubtotal,
+      tax: newTax,
+      total: newTotal,
+    });
+  }
+
   const { itemID } = useParams();
   const item = getItemById(itemID);
   return (
@@ -17,11 +39,14 @@ export default function Item() {
         <div>
           <h1>{item.name}</h1>
           <img alt={item.name} src={item.imageURL} />
-          <p>{item.price}</p>
+          {item.tags.map((tag) => (
+            <p>{tag}</p>
+          ))}
+          <p>
+            ${item.price}/{item.size} oz
+          </p>
           <p>{item.description}</p>
-          <button onClick={() => setCart([...cart, {id: item.id, quantity: 1}])}>
-            Add to cart
-          </button>
+          <button onClick={() => onItemAddToCart()}>Add to cart</button>
         </div>
       ) : (
         <Error />

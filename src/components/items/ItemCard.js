@@ -7,7 +7,9 @@ export default function ItemCard(props) {
       <div>
         <h1>{props.item.name}</h1>
         <img alt={props.item.name} src={props.item.imageURL} />
-        <p>{props.item.price}</p>
+        <p>
+          ${props.item.price}/{props.item.size} oz
+        </p>
       </div>
     </a>
   );
