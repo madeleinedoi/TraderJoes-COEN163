@@ -60,6 +60,12 @@ export default function Login() {
           Submit
         </button>
       </form>
+
+      <div>
+        <a href="/signup">Sign Up</a>
+        <a href="/reset">Reset Password</a>
+        <a href="/">Continue as Guest</a>
+      </div>
     </div>
   );
 }

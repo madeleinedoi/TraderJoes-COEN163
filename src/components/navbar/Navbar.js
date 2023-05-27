@@ -14,6 +14,8 @@ export default function Navbar() {
       <a href="/">Home</a>
       <a href="/items">Items</a>
       <a href="/cart">Cart</a>
+      <a href="/about">About</a>
+      <a href="/faq">FAQ</a>
       {user ? (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a onClick={logout}> Logout </a>

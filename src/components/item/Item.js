@@ -5,9 +5,14 @@ import { useParams } from "react-router-dom";
 import getItemById from "../../helpers/getItemByID";
 import Error from "../error/Error";
 import { CartContext } from "../../App";
+import NumericInput from "react-numeric-input";
+import { updateItemQuantity } from "../../helpers/updateItemQuantity";
 
 export default function Item() {
   const { cart, setCart } = useContext(CartContext);
+  const { itemID } = useParams();
+  const itemInCart = cart.items.find((item) => item.id === itemID);
+  const item = getItemById(itemID);
 
   function onItemAddToCart() {
     const newItems = [...cart.items];
@@ -31,8 +36,6 @@ export default function Item() {
     });
   }
 
-  const { itemID } = useParams();
-  const item = getItemById(itemID);
   return (
     <div>
       {item ? (
@@ -46,7 +49,17 @@ export default function Item() {
             ${item.price}/{item.size} oz
           </p>
           <p>{item.description}</p>
-          <button onClick={() => onItemAddToCart()}>Add to cart</button>
+          {itemInCart ? (
+            <NumericInput
+              min={0}
+              onChange={(quantity) =>
+                updateItemQuantity(itemID, quantity, cart, setCart)
+              }
+              value={itemInCart.quantity}
+            />
+          ) : (
+            <button onClick={() => onItemAddToCart()}>Add to cart</button>
+          )}
         </div>
       ) : (
         <Error />
