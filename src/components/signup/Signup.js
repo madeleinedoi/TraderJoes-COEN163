@@ -34,7 +34,7 @@ export default function Signup() {
     setError(false);
     localStorage.setItem("accounts", JSON.stringify([...accounts, newAccount]));
     setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/items";
       setUser(newAccount);
     }, 2000);
   }
@@ -71,7 +71,7 @@ export default function Signup() {
       </form>
       <div>
         <a href="/login">Login</a>
-        <a href="/">Continue as Guest</a>
+        <a href="/items">Continue as Guest</a>
       </div>
     </div>
   );

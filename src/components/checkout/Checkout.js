@@ -49,8 +49,13 @@ export default function Checkout() {
     setSuccess(true);
     setError(false);
     setTimeout(() => {
-      window.location.href = "/";
-      setCart({});
+      window.location.href = "/items";
+      setCart({
+        items: [],
+        subtotal: 0,
+        tax: 0,
+        total: 0,
+      });
     }, 2000);
   }
 

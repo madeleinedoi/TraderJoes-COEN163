@@ -1,5 +1,9 @@
 export const CATEGORIES = [
   {
+    name: "What's new",
+    subcategories: [ "Seasonal", "Limited Edition", "Food", "Beverages", "Flowers & Plants", "Everything else" ]
+  },  
+  {
     name: "Food",
     subcategories: [
       "Bakery",
@@ -14,4 +18,16 @@ export const CATEGORIES = [
       "Snacks & Sweets",
     ],
   },
+  {
+    name: "Beverages",
+    subcategories: []
+  },
+  {
+    name: "Flowers & Plants",
+    subcategories: []
+  },
+  {
+    name: "Everything Else",
+    subcategories: []
+  }
 ];

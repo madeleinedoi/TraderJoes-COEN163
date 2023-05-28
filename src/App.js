@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar.js";
-import Home from "./components/home/Home.js";
 import Login from "./components/login/Login.js";
 import Cart from "./components/cart/Cart.js";
 import Item from "./components/item/Item.js";
@@ -52,20 +51,19 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{ user: user, setUser: setUser }}>
         <CartContext.Provider value={{ cart: cart, setCart: setCart }}>
-          <Navbar />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/item/:itemID" element={<Item />} />
-              <Route path="/items" element={<Items />} />
+              <Route path="/" element={<Signup />} />
+              <Route path="/login" element={<><Navbar /><Login /></>} />
+              <Route path="/cart" element={<><Navbar /><Cart /></>} />
+              <Route path="/item/:itemID" element={<><Navbar /><Item /></>} />
+              <Route path="/items" element={<><Navbar /><Items /></>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/reset" element={<Reset />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/about" element={<About />} />
-              <Route path="*" element={<Error />} />
+              <Route path="/checkout" element={<><Navbar /><Checkout /></>} />
+              <Route path="/faq" element={<><Navbar /><FAQ /></>} />
+              <Route path="/about" element={<><Navbar /><About /></>} />
+              <Route path="*" element={<><Navbar /><Error /></>} />
             </Routes>
           </BrowserRouter>
         </CartContext.Provider>

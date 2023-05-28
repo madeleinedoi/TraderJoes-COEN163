@@ -40,7 +40,7 @@ export default function Reset() {
       ])
     );
     setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/items";
       setUser(newAccount);
     }, 2000);
   }
@@ -59,7 +59,7 @@ export default function Reset() {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
         />
-        <label>Password</label>
+        <label>New Password</label>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -72,7 +72,7 @@ export default function Reset() {
       <div>
         <a href="/signup">Sign Up</a>
         <a href="/login">Login</a>
-        <a href="/">Continue as Guest</a>
+        <a href="/items">Continue as Guest</a>
       </div>
     </div>
   );

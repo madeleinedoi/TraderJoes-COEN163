@@ -27,7 +27,7 @@ export default function Login() {
       setSuccess(true);
       setError(false);
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/items";
         setUser(foundAccount[0]);
       }, 2000);
       return;
@@ -64,7 +64,7 @@ export default function Login() {
       <div>
         <a href="/signup">Sign Up</a>
         <a href="/reset">Reset Password</a>
-        <a href="/">Continue as Guest</a>
+        <a href="/items">Continue as Guest</a>
       </div>
     </div>
   );
