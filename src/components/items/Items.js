@@ -15,9 +15,7 @@ export default function Items() {
     category
       ? setFilteredItems(
           items.filter((item) =>
-            item.categories.includes(category.name) && (subcategory
-              ? item.subcategories.includes(subcategory)
-              : true)
+            item.categories.includes(category.name)
           )
         )
       : setFilteredItems(items);
