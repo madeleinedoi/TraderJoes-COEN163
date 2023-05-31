@@ -103,8 +103,8 @@ export const items = [
   {
     id: "gluten_free_strawberry_muffins",
     name: "Gluten Free Strawberry Muffins",
-    description: "",
-    imageURL: "Like our everyday Gluten Free Double Chocolate Muffins, Trader Joe’s Gluten Free Strawberry Muffins combine a gluten free flour blend (including white and brown rice flours, potato starch, and tapioca starch) with sweet cream buttermilk and sour cream to create one of the most marvelously moist muffins we’ve ever tasted, gluten free or otherwise.",
+    description: "Like our everyday Gluten Free Double Chocolate Muffins, Trader Joe’s Gluten Free Strawberry Muffins combine a gluten free flour blend (including white and brown rice flours, potato starch, and tapioca starch) with sweet cream buttermilk and sour cream to create one of the most marvelously moist muffins we’ve ever tasted, gluten free or otherwise.",
+    imageURL: "https://www.traderjoes.com/content/dam/trjo/products/m20105/73910.png/jcr:content/renditions/webp-1280.webp",
     price: 5.99,
     size: 14,
     tags: ["Gluten Free"],
