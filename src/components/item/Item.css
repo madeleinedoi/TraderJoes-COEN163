@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;500;700&display=swap');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+#itemBody{
+    background-color: #E7EADF;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 110px 50px 0px 50px;
+
+}
+
+#itemBody #productImage{
+    height: auto;
+    width: auto;
+    max-width: 30vw;
+    min-width: 200px;
+    max-height: 60vh;
+}
+
+#itemBody section{
+    box-sizing: border-box;
+    padding: 30px;
+    min-width: 375px;
+	width: 40vw;
+    text-align: left;
+}
+
+#itemBody section h1{
+    font-size: 2.7em;
+}
+
+#itemBody section p{
+    font-size: 1.5em;
+}
+
+#itemTag{
+    border: solid #A0091B 6px;
+    font-size: 1.2em !important;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+    width: 120px;
+    text-align: center;
+}
+
+#itemBody button{
+    background-color: #A0091B;
+    padding: 10px 25px 10px 25px;
+    font-weight: bold;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+#shoppingLogoIcon{
+    width: 25px;
+    padding-right: 10px;
+}
