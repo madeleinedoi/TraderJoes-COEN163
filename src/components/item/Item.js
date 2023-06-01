@@ -42,6 +42,7 @@ export default function Item() {
       {item ? (
         <div id="itemBody">
             <section>
+              <a id="backButton" href="/items">&lt;</a>
               <h1>{item.name}</h1>
               <p>
                 ${item.price} / {item.size} oz
