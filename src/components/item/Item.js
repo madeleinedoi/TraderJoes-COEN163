@@ -7,6 +7,7 @@ import Error from "../error/Error";
 import { CartContext } from "../../App";
 import NumericInput from "react-numeric-input";
 import { updateItemQuantity } from "../../helpers/updateItemQuantity";
+import cartIcon from "./Shopping_Cart.png"
 
 export default function Item() {
   const { cart, setCart } = useContext(CartContext);
@@ -39,27 +40,29 @@ export default function Item() {
   return (
     <div>
       {item ? (
-        <div>
-          <h1>{item.name}</h1>
-          <img alt={item.name} src={item.imageURL} />
-          {item.tags.map((tag) => (
-            <p>{tag}</p>
-          ))}
-          <p>
-            ${item.price}/{item.size} oz
-          </p>
-          <p>{item.description}</p>
-          {itemInCart ? (
-            <NumericInput
-              min={0}
-              onChange={(quantity) =>
-                updateItemQuantity(itemID, quantity, cart, setCart)
-              }
-              value={itemInCart.quantity}
-            />
-          ) : (
-            <button onClick={() => onItemAddToCart()}>Add to cart</button>
-          )}
+        <div id="itemBody">
+            <section>
+              <h1>{item.name}</h1>
+              <p>
+                ${item.price} / {item.size} oz
+              </p>
+              {item.tags.map((tag) => (
+                <p id="itemTag">{tag}</p>
+              ))}
+              <p>{item.description}</p>
+              {itemInCart ? (
+                <NumericInput
+                  min={0}
+                  onChange={(quantity) =>
+                    updateItemQuantity(itemID, quantity, cart, setCart)
+                  }
+                  value={itemInCart.quantity}
+                />
+              ) : (
+                <button onClick={() => onItemAddToCart()}><img id="shoppingLogoIcon" src={cartIcon} alt="shopping cart icon"></img>ADD TO CART</button>
+              )}
+            </section>
+            <img id="productImage" alt={item.name} src={item.imageURL} />
         </div>
       ) : (
         <Error />
