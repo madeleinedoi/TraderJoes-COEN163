@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { UserContext } from "../../App";
+import bagDesign from "./bagDesign.png";
 
 export default function Login() {
   const { setUser } = React.useContext(UserContext);
@@ -37,35 +38,37 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <div>
-        {error && <h2>{errorMessage}</h2>}
-        {success && <h2>Success</h2>}
-      </div>
-      <form>
-        <label>Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-        />
-        <label>Password</label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-        />
-        <button onClick={handleLogin} type="submit">
-          Submit
-        </button>
-      </form>
-
-      <div>
-        <a href="/signup">Sign Up</a>
-        <a href="/reset">Reset Password</a>
-        <a href="/items">Continue as Guest</a>
-      </div>
+    <div id="loginBody" class="signupBody">
+      <img src={bagDesign} alt="a bag" class="signupImg"></img>
+      <section class="signupContent">
+        <h1>Login Page</h1>
+        <form>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="email"
+          />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="password"
+          />
+          <button onClick={handleLogin} type="submit">
+            Submit &gt;
+          </button>
+        </form>
+        <div class="loginErrorMessage">
+          {error && <h2>{errorMessage}</h2>}
+          {success && <h2>Success</h2>}
+        </div>
+        <div class="continueOther">
+          <a href="/signup">Sign Up</a>
+          <a href="/reset">Reset Password</a>
+          <a href="/items">Continue as Guest</a>
+        </div>
+      </section>
     </div>
   );
 }
