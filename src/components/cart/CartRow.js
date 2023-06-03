@@ -3,10 +3,12 @@ import "./CartRow.css";
 
 export default function CartRow(props) {
   return (
-    <div>
-      <p>{props.item.name}</p>
-      <p>{props.quantity}</p>
-      <button onClick={() => props.removeItem()}>Remove</button>
+    <div id="cartRow">
+      <section>
+        <h4>{props.item.name}</h4>
+        <p>amount: {props.quantity}</p>
+      </section>
+      <button onClick={() => props.removeItem()}>x</button>
     </div>
   );
 }

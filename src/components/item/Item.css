@@ -51,7 +51,7 @@ body{
     text-align: center;
 }
 
-#itemBody button{
+.mainActionBtn{
     background-color: #A0091B;
     padding: 10px 25px 10px 25px;
     font-weight: bold;
@@ -63,9 +63,11 @@ body{
     text-decoration: none;
     display: flex;
     align-items: center;
+    border: none;
+    margin-top: 15px;
 }
 
-#shoppingLogoIcon{
+.shoppingLogoIcon{
     width: 25px;
     padding-right: 10px;
 }

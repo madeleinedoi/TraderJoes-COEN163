@@ -58,9 +58,28 @@ export default function Item() {
                     updateItemQuantity(itemID, quantity, cart, setCart)
                   }
                   value={itemInCart.quantity}
+                  mobile
+                  style={{
+                    wrap: {
+                      background: '#E2E2E2',
+                      fontSize: 28,
+                    },
+                    input: {
+                        borderRadius: '12px',
+                        color: 'black',
+                        border: '1px solid #ccc',
+                        background: 'white',
+                        display: 'block',
+                        fontWeight: 100,
+                        width: '200px'
+                    },
+                    button: {
+                      color: 'white'
+                    }
+                  }}
                 />
               ) : (
-                <button onClick={() => onItemAddToCart()}><img id="shoppingLogoIcon" src={cartIcon} alt="shopping cart icon"></img>ADD TO CART</button>
+                <button class="mainActionBtn" onClick={() => onItemAddToCart()}><img class="shoppingLogoIcon" src={cartIcon} alt="shopping cart icon"></img>ADD TO CART</button>
               )}
             </section>
             <img id="productImage" alt={item.name} src={item.imageURL} />
