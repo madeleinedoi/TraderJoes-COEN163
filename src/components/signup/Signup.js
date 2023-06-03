@@ -43,7 +43,6 @@ export default function Signup() {
 
   return (
     <div class="signupBody">
-      <Navbar></Navbar>
       <img class="signupImg" src={bagDesign} alt="a bag"></img>
       <section class="signupContent">
         <h1>Signup Page</h1>
