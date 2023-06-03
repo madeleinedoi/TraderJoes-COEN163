@@ -1,6 +1,8 @@
 import React from "react";
 import "./Signup.css";
 import { UserContext } from "../../App";
+import bagDesign from "./bagDesign.png";
+import Navbar from "../navbar/Navbar";
 
 export default function Signup() {
   const { setUser } = React.useContext(UserContext);
@@ -40,39 +42,43 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <h1>Signup Page</h1>
-      <div>
-        {error && <h2>{errorMessage}</h2>}
-        {success && <h2>Success</h2>}
-      </div>
-      <form>
-        <label>Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-        />
-        <label>Name</label>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-        />
-        <label>Password</label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-        />
-        <button onClick={handleSignUp} type="submit">
-          Submit
-        </button>
-      </form>
-      <div>
-        <a href="/login">Login</a>
-        <a href="/items">Continue as Guest</a>
-      </div>
+    <div class="signupBody">
+      <Navbar></Navbar>
+      <img class="signupImg" src={bagDesign} alt="a bag"></img>
+      <section class="signupContent">
+        <h1>Signup Page</h1>
+        <form>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="email"
+          />
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="name"
+          />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="password"
+          />
+          <button onClick={handleSignUp} type="submit">
+            Submit &gt;
+          </button>
+        </form>
+          <div class="loginErrorMessage">
+            {error && <h2>{errorMessage}</h2>}
+            {success && <h2>Success</h2>}
+          </div>
+          <div class="continueOther">
+            <a href="/login">Login</a>
+            <a href="/items">Continue as Guest</a>
+          </div>
+      </section>
     </div>
   );
 }
