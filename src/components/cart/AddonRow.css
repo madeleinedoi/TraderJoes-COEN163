@@ -18,8 +18,10 @@
     font-weight: bold;
 }
 
-#addOnRow div{
+#addOnRow a{
     text-align: start;
+    color: black;
+    text-decoration: none;
 }
 
 #addOnRow button{

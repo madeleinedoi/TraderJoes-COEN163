@@ -4,10 +4,10 @@ import "./CartRow.css";
 export default function CartRow(props) {
   return (
     <div id="cartRow">
-      <section>
+      <a href={"/item/"+props.item.id}>
         <h4>{props.item.name}</h4>
         <p>amount: {props.quantity}</p>
-      </section>
+      </a>
       <button onClick={() => props.removeItem()}>x</button>
     </div>
   );

@@ -13,14 +13,16 @@
     margin-bottom: 15px;
 }
 
-#cartRow section{
+#cartRow a{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    text-decoration: none;
+    color: black;
 }
 
-#cartRow section h4, #cartRow section p{
+#cartRow a h4, #cartRow a p{
     padding: 0;
     margin: 0;
 }
