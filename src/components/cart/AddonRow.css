@@ -1,0 +1,30 @@
+#addOnRow{
+    width:460px;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding: 25px;
+    margin-bottom: 15px;
+}
+
+#addOnRow h4, #addOnRow p{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+#addOnRow div{
+    text-align: start;
+}
+
+#addOnRow button{
+    background: none;
+    border: none;
+    padding: none;
+    margin: none;
+}

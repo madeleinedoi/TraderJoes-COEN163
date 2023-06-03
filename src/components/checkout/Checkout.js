@@ -1,6 +1,11 @@
 import React from "react";
 import "./Checkout.css";
 import { CartContext, UserContext } from "../../App";
+import creditCardGraphic from "./creditCardGraphic.png";
+import CartRow from "../cart/CartRow";
+import getItemById from "../../helpers/getItemByID";
+import { removeItem } from "../../helpers/removeItem";
+import squigglyDesign from "./squigglyDesign.png";
 
 export default function Checkout() {
   const { cart, setCart } = React.useContext(CartContext);
@@ -60,56 +65,74 @@ export default function Checkout() {
   }
 
   return (
-    <div>
-      <h1>Checkout Page</h1>
-      <div>
-        {error && <h2>{errorMessage}</h2>}
-        {success && <h2>Success</h2>}
+    <div id="checkoutBody">
+      <div id="checkoutTotalSummary">
+        <article>
+          <img src={squigglyDesign} alt="decorative design"></img>
+          <h1>Your Total</h1>
+          <p>SUBTOTAL ${cart.subtotal.toFixed(2)}</p>
+          <p>TAX ${cart.tax.toFixed(2)}</p>
+          <p>TOTAL ${cart.total.toFixed(2)}</p>
+          <img src={squigglyDesign} alt="decorative design"></img>
+        </article>
+        {cart.items.map((cartItem) => {
+          return (
+            <CartRow
+              item={getItemById(cartItem.id)}
+              quantity={cartItem.quantity}
+              removeItem={() => removeItem(cartItem.id, cart, setCart)}
+            />
+          );
+        })}
       </div>
-      <div>
-        <p>{cart.subtotal.toFixed(2)}</p>
-        <p>{cart.tax.toFixed(2)}</p>
-        <p>{cart.total.toFixed(2)}</p>
-      </div>
+
       <form>
-        <label>Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-        />
-        <label>Name</label>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-        />
-        <label>Address</label>
-        <input
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          type="text"
-        />
-        <label>Card Number</label>
-        <input
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          type="text"
-        />
-        <label>Expiry Date</label>
-        <input
-          value={expiryDate}
-          onChange={(e) => setExpiryDate(e.target.value)}
-          type="text"
-        />
-        <label>CVV</label>
-        <input
-          value={cvv}
-          onChange={(e) => setCvv(e.target.value)}
-          type="text"
-        />
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
+          <h1>Checkout</h1>
+          <h3>User Information</h3>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="email"
+          />
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="name"
+          />
+          <input
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            type="text"
+            placeholder="address"
+          />
+          <h3>Credit Card Information</h3>
+          <img src={creditCardGraphic} alt="credit card graphic"></img>
+          <input
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
+            type="text"
+            placeholder="card number"
+          />
+          <input
+            value={expiryDate}
+            onChange={(e) => setExpiryDate(e.target.value)}
+            type="text"
+            placeholder="mm / yy"
+          />
+          <input
+            value={cvv}
+            onChange={(e) => setCvv(e.target.value)}
+            type="text"
+            placeholder="cvv"
+          />
+          <div>
+            {error && <h2 style={{color: 'red', fontSize: '1.2em'}}>{errorMessage}</h2>}
+            {success && <h2>Success</h2>}
+          </div>
+          <button class="mainActionBtn" onClick={handleSubmit}>Submit</button>
+        </form>
     </div>
   );
 }

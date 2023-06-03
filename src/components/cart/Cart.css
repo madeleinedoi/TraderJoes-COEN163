@@ -1,0 +1,126 @@
+#cartBody{
+    background-color: #E7EADF;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#checkoutTotalSection{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 160px;
+}
+
+#checkoutTotalSection h2{
+    font-size: 2rem;
+    font-family: 'PT Serif', serif;
+    margin-bottom: 10px;
+}
+
+.backButtonCheckout{
+    text-decoration: none;
+    border-radius: 30px;
+    border: solid #A0091B 4px;
+    color: #A0091B;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+}
+
+.costReport{
+    padding: 0;
+    margin: 0 0 3px 0;
+}
+
+.costReport:nth-child(6){
+    font-size: 1.5em !important;
+}
+
+.locationSelection{
+    width: min(30vw, 400px);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    border-radius: 12px;
+    padding: 0 15px 0 15px;
+    margin-bottom: 15px;
+}
+
+.locationInformation{
+    display: flex;
+    align-items: center;
+}
+
+.locationInformation img{
+    height: 40px;
+}
+
+.locationInformation div{
+    text-align: left;
+    margin-left: 15px;
+}
+
+.locationInformation div h4, .locationInformation div p{
+    padding: 0;
+    margin: 0;
+}
+
+#selectLocationBtn{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.selectedLocationImg{
+    height: 30px;
+    align-self: center;
+}
+
+/*CHECKOUT ITEM SECTION*/
+#checkoutItemSection{
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 160px;
+    margin-bottom: 40px;
+}
+
+#checkoutItemSection #existingItems{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#checkoutItemSection #existingItems img:last-child{
+    align-self: flex-end;
+    transform: rotate(180deg);
+}
+
+#checkoutItemSection h2{
+    font-family: 'PT Serif', serif;
+}
+
+#checkoutItemSection #existingItems h2{
+    margin-left: 40px;
+}
+
+/*ADDITIOONAL ITEMS*/
+
+#additionalItems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#additionalItems h2{
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+}
