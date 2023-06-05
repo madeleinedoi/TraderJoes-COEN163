@@ -56,7 +56,7 @@ export default function Checkout() {
     setSuccess(true);
     setError(false);
     setTimeout(() => {
-      useNavigate("/items");
+      navigate("/items");
       setCart({
         items: [],
         subtotal: 0,
