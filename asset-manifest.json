@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7f48cfda.css",
+    "main.js": "/static/js/main.1aab99a5.js",
+    "static/js/787.2785282e.chunk.js": "/static/js/787.2785282e.chunk.js",
+    "static/media/bagDesign.png": "/static/media/bagDesign.44c6b681f1d05665e49d.png",
+    "static/media/creditCardGraphic.png": "/static/media/creditCardGraphic.1dc2ddf29e51fe57d553.png",
+    "static/media/wordsTJLogo.png": "/static/media/wordsTJLogo.3e36bd4ed429b1458077.png",
+    "index.html": "/index.html",
+    "main.7f48cfda.css.map": "/static/css/main.7f48cfda.css.map",
+    "main.1aab99a5.js.map": "/static/js/main.1aab99a5.js.map",
+    "787.2785282e.chunk.js.map": "/static/js/787.2785282e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f48cfda.css",
+    "static/js/main.1aab99a5.js"
+  ]
+}
