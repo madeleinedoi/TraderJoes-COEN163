@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
 import "./ItemCard.css";
 import { CartContext } from "../../App";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ItemCard(props) {
+  const navigate = useNavigate();
   const { cart, setCart } = useContext(CartContext);
 
   const itemID = props.item.id;
   const itemInCart = cart.items.find((item) => item.id === itemID);
+
+  function onItemAddToCart() {
+    navigate("/item/" + props.item.id)
+  }
 
   return (
     <div>
@@ -20,7 +25,7 @@ export default function ItemCard(props) {
           </p>
         </div>
       </Link>
-      <Link to={"/item/" + props.item.id}>Add to cart</Link>
+      <button onClick={() => onItemAddToCart()}>Add to cart</button>
     </div>
   );
 }

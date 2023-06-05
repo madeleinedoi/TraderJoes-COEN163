@@ -13,8 +13,10 @@ import locationSymbol from "./locationSymbol.png";
 import cartIcon from "../item/Shopping_Cart.png";
 import squigglyDesign from "./squigglyDesign.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  const navigate = useNavigate()
   const { cart, setCart } = React.useContext(CartContext);
   const [selectedLocation, setSelectedLocation] = React.useState(null);
   const [errorMessage, setErrorMessage] = React.useState(null)
@@ -41,8 +43,8 @@ export default function Cart() {
       setErrorMessage("Error: Please Select A Pickup Location.")
       return
     }
-    
-    window.location.href = "/checkout"
+
+    navigate("/checkout")
   }
 
   return (

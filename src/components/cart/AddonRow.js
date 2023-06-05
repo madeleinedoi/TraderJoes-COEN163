@@ -10,7 +10,7 @@ export default function AddonRow(props) {
         <h4>{props.item.name}</h4>
         <p>${props.item.price}</p>
       </Link>
-      <button onClick={() => window.location.href = "/item/" + props.item.id}><img src={addButton} alt="add to cart"></img></button>
+      <Link to={"/item/"+props.item.id}><img src={addButton} alt="add to cart"></img></Link>
     </div>
   );
 }
