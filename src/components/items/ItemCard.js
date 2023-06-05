@@ -9,10 +9,6 @@ export default function ItemCard(props) {
   const itemID = props.item.id;
   const itemInCart = cart.items.find((item) => item.id === itemID);
 
-  function onItemAddToCart() {
-    window.location.href="/item/" + props.item.id
-  }
-
   return (
     <div>
       <Link to={"/item/" + props.item.id} key={props.item.id}>
@@ -24,7 +20,7 @@ export default function ItemCard(props) {
           </p>
         </div>
       </Link>
-      <button onClick={() => onItemAddToCart()}>Add to cart</button>
+      <Link to={"/item/" + props.item.id}>Add to cart</Link>
     </div>
   );
 }
