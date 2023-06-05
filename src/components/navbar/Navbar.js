@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { UserContext } from "../../App";
 import tjLogo from "./wordsTJLogo.png"
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { user, setUser } = React.useContext(UserContext);
@@ -14,19 +15,19 @@ export default function Navbar() {
     <div id="navBar">
       <img src={tjLogo} alt="the trader joes logo"/>
       <section>
-        <a href="/items">Items</a>
-        <a href="/about">About</a>
-        <a href="/faq">FAQ</a>
+        <Link to="/items">Items</Link>
+        <Link to="/about">About</Link>
+        <Link to="/faq">FAQ</Link>
       {user ? (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a onClick={logout}> Logout </a>
       ) : (
         <>
-          <a href="/signup">Signup</a>
-          <a href="/login">Login</a>
+          <Link to="/signup">Signup</Link>
+          <Link to="/login">Login</Link>
         </>
       )}
-      <a id="heavyButton" href="/cart">Cart</a>
+      <Link id="heavyButton" to="/cart">Cart</Link>
       </section>
     </div>
   );

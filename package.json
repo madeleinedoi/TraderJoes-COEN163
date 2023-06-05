@@ -1,7 +1,7 @@
 {
   "name": "trader-joes-app",
   "version": "0.1.0",
-  "homepage": "/TraderJoes-COEN163/#",
+  "homepage": "https://madeleinedoi.github.io/TraderJoes-COEN163/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -2,6 +2,7 @@ import React from "react";
 import "./Login.css";
 import { UserContext } from "../../App";
 import bagDesign from "./bagDesign.png";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { setUser } = React.useContext(UserContext);
@@ -64,9 +65,9 @@ export default function Login() {
           {success && <h2>Success</h2>}
         </div>
         <div class="continueOther">
-          <a href="/signup">Sign Up</a>
-          <a href="/reset">Reset Password</a>
-          <a href="/items">Continue as Guest</a>
+          <Link to="/signup">Sign Up</Link>
+          <Link to="/reset">Reset Password</Link>
+          <Link to="/items">Continue as Guest</Link>
         </div>
       </section>
     </div>

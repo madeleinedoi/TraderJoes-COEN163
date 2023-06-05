@@ -2,7 +2,7 @@ import React from "react";
 import "./Signup.css";
 import { UserContext } from "../../App";
 import bagDesign from "./bagDesign.png";
-import Navbar from "../navbar/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const { setUser } = React.useContext(UserContext);
@@ -74,8 +74,8 @@ export default function Signup() {
             {success && <h2>Success</h2>}
           </div>
           <div class="continueOther">
-            <a href="/login">Login</a>
-            <a href="/items">Continue as Guest</a>
+            <Link to="/login">Login</Link>
+            <Link to="/items">Continue as Guest</Link>
           </div>
       </section>
     </div>

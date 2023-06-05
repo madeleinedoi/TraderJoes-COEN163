@@ -8,6 +8,7 @@ import { CartContext } from "../../App";
 import NumericInput from "react-numeric-input";
 import { updateItemQuantity } from "../../helpers/updateItemQuantity";
 import cartIcon from "./Shopping_Cart.png"
+import { Link } from "react-router-dom";
 
 export default function Item() {
   const { cart, setCart } = useContext(CartContext);
@@ -42,7 +43,7 @@ export default function Item() {
       {item ? (
         <div id="itemBody">
             <section>
-              <a id="backButton" href="/items">&lt;</a>
+              <Link id="backButton" to="/items">&lt;</Link>
               <h1>{item.name}</h1>
               <p>
                 ${item.price} / {item.size} oz

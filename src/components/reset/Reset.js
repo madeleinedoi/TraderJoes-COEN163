@@ -1,6 +1,7 @@
 import React from "react";
 import "./Reset.css";
 import { UserContext } from "../../App";
+import { Link } from "react-router-dom";
 
 export default function Reset() {
   const { setUser } = React.useContext(UserContext);
@@ -70,9 +71,9 @@ export default function Reset() {
         </button>
       </form>
       <div>
-        <a href="/signup">Sign Up</a>
-        <a href="/login">Login</a>
-        <a href="/items">Continue as Guest</a>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/items">Continue as Guest</Link>
       </div>
     </div>
   );

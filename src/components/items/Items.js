@@ -3,6 +3,7 @@ import "./Items.css";
 import ItemCard from "./ItemCard";
 import getItems from "../../helpers/getItems";
 import { CATEGORIES } from "../../enums/categories";
+import { Link } from "react-router-dom";
 
 export default function Items() {
   const items = getItems();
@@ -25,7 +26,7 @@ export default function Items() {
     <div>
       {CATEGORIES.map((category, index) => (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <a
+        <Link
           key={index}
           onClick={() => {
             setCategory(category);
@@ -33,15 +34,15 @@ export default function Items() {
           }}
         >
           {category.name}
-        </a>
+        </Link>
       ))}
       <div>
         {category &&
           category.subcategories.map((subcategory, index) => (
             // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <a key={index} onClick={() => setSubcategory(subcategory)}>
+            <Link key={index} onClick={() => setSubcategory(subcategory)}>
               {subcategory}
-            </a>
+            </Link>
           ))}
       </div>
       {filteredItems.map((item, index) => (

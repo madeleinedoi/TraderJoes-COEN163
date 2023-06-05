@@ -12,6 +12,7 @@ import addedButton from "./addedButton.png";
 import locationSymbol from "./locationSymbol.png";
 import cartIcon from "../item/Shopping_Cart.png";
 import squigglyDesign from "./squigglyDesign.png";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cart, setCart } = React.useContext(CartContext);
@@ -47,7 +48,7 @@ export default function Cart() {
   return (
     <div id="cartBody">
       <section id="checkoutTotalSection">
-        <a class="backButtonCheckout" href="/items">&lt; Back to catalog</a>
+        <Link class="backButtonCheckout" href="/items">&lt; Back to catalog</Link>
         <h2>Your Total:</h2>
         <p class="costReport">SUBTOTAL {cart.subtotal.toFixed(2)}</p>
         <p class="costReport">TAX {cart.tax.toFixed(2)}</p>

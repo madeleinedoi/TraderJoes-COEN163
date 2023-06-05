@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./ItemCard.css";
 import { CartContext } from "../../App";
+import { Link } from "react-router-dom";
 
 export default function ItemCard(props) {
   const { cart, setCart } = useContext(CartContext);
@@ -14,7 +15,7 @@ export default function ItemCard(props) {
 
   return (
     <div>
-      <a href={"/item/" + props.item.id} key={props.item.id}>
+      <Link to={"/item/" + props.item.id} key={props.item.id}>
         <div>
           <h1>{props.item.name}</h1>
           <img alt={props.item.name} src={props.item.imageURL} />
@@ -22,7 +23,7 @@ export default function ItemCard(props) {
             ${props.item.price}/{props.item.size} oz
           </p>
         </div>
-      </a>
+      </Link>
       <button onClick={() => onItemAddToCart()}>Add to cart</button>
     </div>
   );
