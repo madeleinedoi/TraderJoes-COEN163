@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar.js";
 import Login from "./components/login/Login.js";
@@ -51,7 +51,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={{ user: user, setUser: setUser }}>
         <CartContext.Provider value={{ cart: cart, setCart: setCart }}>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path="/" element={<Signup />} />
               <Route path="/login" element={<Login />} />
@@ -65,7 +65,7 @@ function App() {
               <Route path="/about" element={<><Navbar /><About /></>} />
               <Route path="*" element={<><Navbar /><Error /></>} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </CartContext.Provider>
       </UserContext.Provider>
     </div>
