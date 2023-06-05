@@ -1,9 +1,10 @@
 import React from "react";
-import "./Reset.css";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
-import { Link } from "react-router-dom";
+import "./Reset.css";
 
 export default function Reset() {
+  const navigate = useNavigate();
   const { setUser } = React.useContext(UserContext);
 
   const [email, setEmail] = React.useState("");
@@ -41,7 +42,7 @@ export default function Reset() {
       ])
     );
     setTimeout(() => {
-      window.location.href = "/items";
+      navigate("/items");
       setUser(newAccount);
     }, 2000);
   }

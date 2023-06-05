@@ -1,13 +1,15 @@
 import React from "react";
-import "./Checkout.css";
+import { useNavigate } from "react-router-dom";
 import { CartContext, UserContext } from "../../App";
-import creditCardGraphic from "./creditCardGraphic.png";
-import CartRow from "../cart/CartRow";
 import getItemById from "../../helpers/getItemByID";
 import { removeItem } from "../../helpers/removeItem";
+import CartRow from "../cart/CartRow";
+import "./Checkout.css";
+import creditCardGraphic from "./creditCardGraphic.png";
 import squigglyDesign from "./squigglyDesign.png";
 
 export default function Checkout() {
+  const navigate = useNavigate();
   const { cart, setCart } = React.useContext(CartContext);
   const { user } = React.useContext(UserContext);
 
@@ -54,7 +56,7 @@ export default function Checkout() {
     setSuccess(true);
     setError(false);
     setTimeout(() => {
-      window.location.href = "/items";
+      useNavigate("/items");
       setCart({
         items: [],
         subtotal: 0,
@@ -87,52 +89,52 @@ export default function Checkout() {
       </div>
 
       <form>
-          <h1>Checkout</h1>
-          <h3>User Information</h3>
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="email"
-          />
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="name"
-          />
-          <input
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            type="text"
-            placeholder="address"
-          />
-          <h3>Credit Card Information</h3>
-          <img src={creditCardGraphic} alt="credit card graphic"></img>
-          <input
-            value={cardNumber}
-            onChange={(e) => setCardNumber(e.target.value)}
-            type="text"
-            placeholder="card number"
-          />
-          <input
-            value={expiryDate}
-            onChange={(e) => setExpiryDate(e.target.value)}
-            type="text"
-            placeholder="mm / yy"
-          />
-          <input
-            value={cvv}
-            onChange={(e) => setCvv(e.target.value)}
-            type="text"
-            placeholder="cvv"
-          />
-          <div>
-            {error && <h2 style={{color: 'red', fontSize: '1.2em'}}>{errorMessage}</h2>}
-            {success && <h2>Success</h2>}
-          </div>
-          <button class="mainActionBtn" onClick={handleSubmit}>Submit</button>
-        </form>
+        <h1>Checkout</h1>
+        <h3>User Information</h3>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="email"
+        />
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          type="text"
+          placeholder="name"
+        />
+        <input
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          type="text"
+          placeholder="address"
+        />
+        <h3>Credit Card Information</h3>
+        <img src={creditCardGraphic} alt="credit card graphic"></img>
+        <input
+          value={cardNumber}
+          onChange={(e) => setCardNumber(e.target.value)}
+          type="text"
+          placeholder="card number"
+        />
+        <input
+          value={expiryDate}
+          onChange={(e) => setExpiryDate(e.target.value)}
+          type="text"
+          placeholder="mm / yy"
+        />
+        <input
+          value={cvv}
+          onChange={(e) => setCvv(e.target.value)}
+          type="text"
+          placeholder="cvv"
+        />
+        <div>
+          {error && <h2 style={{ color: 'red', fontSize: '1.2em' }}>{errorMessage}</h2>}
+          {success && <h2>Success</h2>}
+        </div>
+        <button class="mainActionBtn" onClick={handleSubmit}>Submit</button>
+      </form>
     </div>
   );
 }

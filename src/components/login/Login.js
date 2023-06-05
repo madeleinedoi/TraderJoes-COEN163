@@ -1,10 +1,11 @@
 import React from "react";
-import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
+import "./Login.css";
 import bagDesign from "./bagDesign.png";
-import { Link } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const { setUser } = React.useContext(UserContext);
 
   const [email, setEmail] = React.useState("");
@@ -29,7 +30,7 @@ export default function Login() {
       setSuccess(true);
       setError(false);
       setTimeout(() => {
-        window.location.href = "/items";
+        navigate("/items");
         setUser(foundAccount[0]);
       }, 2000);
       return;

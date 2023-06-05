@@ -1,9 +1,9 @@
 import React from "react";
-import "./Items.css";
-import ItemCard from "./ItemCard";
-import getItems from "../../helpers/getItems";
-import { CATEGORIES } from "../../enums/categories";
 import { Link } from "react-router-dom";
+import { CATEGORIES } from "../../enums/categories";
+import getItems from "../../helpers/getItems";
+import ItemCard from "./ItemCard";
+import "./Items.css";
 
 export default function Items() {
   const items = getItems();
@@ -15,10 +15,10 @@ export default function Items() {
   React.useEffect(() => {
     category
       ? setFilteredItems(
-          items.filter((item) =>
-            item.categories.includes(category.name)
-          )
+        items.filter((item) =>
+          item.categories.includes(category.name)
         )
+      )
       : setFilteredItems(items);
   }, [items, category, subcategory]);
 

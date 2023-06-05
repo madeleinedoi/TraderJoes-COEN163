@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import "./ItemCard.css";
-import { CartContext } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../App";
+import "./ItemCard.css";
 
 export default function ItemCard(props) {
   const navigate = useNavigate();

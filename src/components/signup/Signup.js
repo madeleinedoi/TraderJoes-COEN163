@@ -1,10 +1,11 @@
 import React from "react";
-import "./Signup.css";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
+import "./Signup.css";
 import bagDesign from "./bagDesign.png";
-import { Link } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
   const { setUser } = React.useContext(UserContext);
 
   const [email, setEmail] = React.useState("");
@@ -36,7 +37,7 @@ export default function Signup() {
     setError(false);
     localStorage.setItem("accounts", JSON.stringify([...accounts, newAccount]));
     setTimeout(() => {
-      window.location.href = "/items";
+      navigate("/items");
       setUser(newAccount);
     }, 2000);
   }
@@ -69,14 +70,14 @@ export default function Signup() {
             Submit &gt;
           </button>
         </form>
-          <div class="loginErrorMessage">
-            {error && <h2>{errorMessage}</h2>}
-            {success && <h2>Success</h2>}
-          </div>
-          <div class="continueOther">
-            <Link to="/login">Login</Link>
-            <Link to="/items">Continue as Guest</Link>
-          </div>
+        <div class="loginErrorMessage">
+          {error && <h2>{errorMessage}</h2>}
+          {success && <h2>Success</h2>}
+        </div>
+        <div class="continueOther">
+          <Link to="/login">Login</Link>
+          <Link to="/items">Continue as Guest</Link>
+        </div>
       </section>
     </div>
   );

@@ -1,19 +1,18 @@
 import React from "react";
-import "./Cart.css";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../App";
-import getItemById from "../../helpers/getItemByID";
-import CartRow from "./CartRow";
-import { removeItem } from "../../helpers/removeItem";
-import { locations } from "../../data/locations";
 import { items } from "../../data/items";
+import { locations } from "../../data/locations";
+import getItemById from "../../helpers/getItemByID";
+import { removeItem } from "../../helpers/removeItem";
+import cartIcon from "../item/Shopping_Cart.png";
 import AddonRow from "./AddonRow";
+import "./Cart.css";
+import CartRow from "./CartRow";
 import addButton from "./addButton.png";
 import addedButton from "./addedButton.png";
 import locationSymbol from "./locationSymbol.png";
-import cartIcon from "../item/Shopping_Cart.png";
 import squigglyDesign from "./squigglyDesign.png";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const navigate = useNavigate()
@@ -73,9 +72,9 @@ export default function Cart() {
             )}
           </div>
         ))}
-        {errorMessage && 
+        {errorMessage &&
           <p
-          style={{ color: 'red', fontWeight: 'bold' }}
+            style={{ color: 'red', fontWeight: 'bold' }}
           >
             {errorMessage}</p>
         }
@@ -85,16 +84,16 @@ export default function Cart() {
       <section id="checkoutItemSection">
         <div id="existingItems">
           <img src={squigglyDesign} alt="decorative design"></img>
-            <h2>Your Cart ({cartSize}):</h2>
-            {cart.items.map((cartItem) => {
-              return (
-                <CartRow
-                  item={getItemById(cartItem.id)}
-                  quantity={cartItem.quantity}
-                  removeItem={() => removeItem(cartItem.id, cart, setCart)}
-                />
-              );
-            })}
+          <h2>Your Cart ({cartSize}):</h2>
+          {cart.items.map((cartItem) => {
+            return (
+              <CartRow
+                item={getItemById(cartItem.id)}
+                quantity={cartItem.quantity}
+                removeItem={() => removeItem(cartItem.id, cart, setCart)}
+              />
+            );
+          })}
           <img src={squigglyDesign} alt="decorative design"></img>
         </div>
 
