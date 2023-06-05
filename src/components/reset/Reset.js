@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Reset.css";
+import bagDesign from "./bagDesign.png";
 
 export default function Reset() {
   const navigate = useNavigate();
@@ -48,34 +49,37 @@ export default function Reset() {
   }
 
   return (
-    <div>
-      <h1>Reset Password Page</h1>
-      <div>
-        {error && <h2>{errorMessage}</h2>}
-        {success && <h2>Success</h2>}
-      </div>
-      <form>
-        <label>Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-        />
-        <label>New Password</label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-        />
-        <button onClick={handleSignUp} type="submit">
-          Submit
-        </button>
-      </form>
-      <div>
-        <Link to="/signup">Sign Up</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/items">Continue as Guest</Link>
-      </div>
+    <div class="signupBody">
+      <img src={bagDesign} alt="a bag" class="signupImg"></img>
+      <section class="signupContent">
+        <h1>Reset Password Page</h1>
+        <form>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="email"
+          />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="new password"
+          />
+          <button onClick={handleSignUp} type="submit">
+            Submit &gt;
+          </button>
+        </form>
+        <div class="loginErrorMessage">
+          {error && <h2>{errorMessage}</h2>}
+          {success && <h2>Success</h2>}
+        </div>
+        <div class="continueOther">
+          <Link to="/signup">Sign Up</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/items">Continue as Guest</Link>
+        </div>
+      </section>
     </div>
   );
 }
