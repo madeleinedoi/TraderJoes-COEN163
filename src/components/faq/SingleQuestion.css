@@ -1,0 +1,32 @@
+.questionContainer{
+    width: 900px;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 40px 15px 40px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.questionBody{
+    display: flex;
+    justify-content: space-between;
+}
+
+.questionContainer:hover{
+    background-color: #e4e4e4;
+}
+
+.questionBody h2{
+    font-family: 'PT Serif', serif;
+}
+
+.questionBody button{
+    background: none;
+    border: none;
+}
+
+.questionContainer p{
+    text-align: center;
+}
+

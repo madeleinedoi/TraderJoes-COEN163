@@ -1,0 +1,72 @@
+#HelpBody{
+    background-color: #E7EADF;
+    min-height: 100vh;
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#HelpBody #FAQBody h1{
+    font-family: 'PT Serif', serif;
+    color: #67412B;
+    font-size: 2.5em;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+#ContactBody{
+    margin-top: 100px;
+    height: 300px;
+    width: 100vw;
+    background-color: #F5F5F5;
+    color: #67412B;
+    padding: 20px 10px 20px 10px;
+}
+
+#ContactBody h2{
+    font-size: 2em;
+    font-family: 'PT Serif', serif;
+    margin-bottom: 30px;
+}
+
+#ContactBody form{
+    margin: 0 100px 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#ContactBody form section{
+    display: flex;
+    flex-direction: column;
+}
+
+#ContactBody form input{ 
+    background-color: none;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 1.25em;
+    border-bottom: #407994 1px solid;
+}
+
+#ContactBody form input[name=question]{
+    width: 60vw;
+}
+
+#ContactBody form section input{
+    width: 20vw;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#ContactBody form section input[type=submit]{
+    width: 100px;
+    background-color: #407994;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-weight: bold;
+    height: 50px
+}
