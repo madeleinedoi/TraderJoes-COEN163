@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <div id="navBar">
-      <img src={tjLogo} alt="the trader joes logo" />
+      <Link to="/items"><img src={tjLogo} alt="the trader joes logo" /></Link>
       <section>
         <Link to="/items">Items</Link>
         <Link to="/about">About</Link>
