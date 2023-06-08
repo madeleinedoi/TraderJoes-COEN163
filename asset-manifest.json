@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TraderJoes-COEN163/static/css/main.95aa3a7f.css",
-    "main.js": "/TraderJoes-COEN163/static/js/main.9a609a30.js",
+    "main.js": "/TraderJoes-COEN163/static/js/main.a69f9a47.js",
     "static/js/787.2785282e.chunk.js": "/TraderJoes-COEN163/static/js/787.2785282e.chunk.js",
     "static/media/aboutUsImg.png": "/TraderJoes-COEN163/static/media/aboutUsImg.99ba59370d851bd6f61c.png",
     "static/media/bagDesign.png": "/TraderJoes-COEN163/static/media/bagDesign.44c6b681f1d05665e49d.png",
@@ -9,11 +9,11 @@
     "static/media/wordsTJLogo.png": "/TraderJoes-COEN163/static/media/wordsTJLogo.3e36bd4ed429b1458077.png",
     "index.html": "/TraderJoes-COEN163/index.html",
     "main.95aa3a7f.css.map": "/TraderJoes-COEN163/static/css/main.95aa3a7f.css.map",
-    "main.9a609a30.js.map": "/TraderJoes-COEN163/static/js/main.9a609a30.js.map",
+    "main.a69f9a47.js.map": "/TraderJoes-COEN163/static/js/main.a69f9a47.js.map",
     "787.2785282e.chunk.js.map": "/TraderJoes-COEN163/static/js/787.2785282e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95aa3a7f.css",
-    "static/js/main.9a609a30.js"
+    "static/js/main.a69f9a47.js"
   ]
 }
