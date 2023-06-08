@@ -1,83 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;500;700&display=swap");
 
-body{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
 }
 
-#itemBody{
-    background-color: #E7EADF;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 100vh;
-    box-sizing: border-box;
-    padding: 110px 50px 0px 50px;
-
+#itemBody {
+  background-color: #e7eadf;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 110px 50px 0px 50px;
 }
 
-#itemBody #productImage{
-    height: auto;
-    width: auto;
-    max-width: 30vw;
-    min-width: 200px;
-    max-height: 60vh;
+#itemBody #productImage {
+  height: auto;
+  width: auto;
+  max-width: 30vh;
+  min-width: 200px;
+  max-height: 60vh;
 }
 
-#itemBody section{
-    box-sizing: border-box;
-    padding: 30px;
-    min-width: 375px;
-	width: 40vw;
-    text-align: left;
+#itemBody section {
+  box-sizing: border-box;
+  padding: 30px;
+  min-width: 375px;
+  width: 40vw;
+  text-align: left;
 }
 
-#itemBody section h1{
-    font-size: 2.7em;
+#itemBody section h1 {
+  font-size: 2.7em;
 }
 
-#itemBody section p{
-    font-size: 1.5em;
+#itemBody section p {
+  font-size: 1.5em;
 }
 
-#itemTag{
-    border: solid #A0091B 6px;
-    font-size: 1.2em !important;
-    border-radius: 20px;
-    padding: 5px 15px 5px 15px;
-    width: 120px;
-    text-align: center;
+#itemTag {
+  border: solid #a0091b 6px;
+  font-size: 1.2em !important;
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+  width: 120px;
+  text-align: center;
 }
 
-.mainActionBtn{
-    background-color: #A0091B;
-    padding: 10px 25px 10px 25px;
-    font-weight: bold;
-    outline: none;
-    border-radius: 30px;
-    font-size: 1.2em;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    border: none;
-    margin-top: 15px;
+.mainActionBtn {
+  background-color: #a0091b;
+  padding: 10px 25px 10px 25px;
+  font-weight: bold;
+  outline: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  margin-top: 15px;
 }
 
-.shoppingLogoIcon{
-    width: 25px;
-    padding-right: 10px;
+.shoppingLogoIcon {
+  width: 25px;
+  padding-right: 10px;
 }
 
-#backButton{
-    background-color: white;
-    border-radius: 100%;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 2em;
-    color: black;
-    padding: 5px 15px 5px 15px;
+#backButton {
+  background-color: white;
+  border-radius: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2em;
+  color: black;
+  padding: 5px 15px 5px 15px;
 }
