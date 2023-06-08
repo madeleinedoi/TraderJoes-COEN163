@@ -20,14 +20,16 @@ export default function Items() {
       : setFilteredItems(items);
   }, [items, category, subcategory]);
 
+
+
   return (
     <div id="Body">
       <div id="heading">
-        <h1>Check out our items</h1>
+        <h1>Our Products: {category.name}</h1>
       </div>
-
+      <hr></hr>
       <div className="mainFlex">
-        <div className="sideNav">
+        {/* <div className="sideNav">
           <ul class="no-bullets">
             {CATEGORIES.map((category, index) => (
               <li>
@@ -36,9 +38,8 @@ export default function Items() {
                   onClick={() => {
                     setCategory(category);
                     setSubcategory(null);
-                  }}
-                >
-                  {category.name}
+                  }}>
+                  <p>{category.name}</p>
                 </Link>
               </li>
             ))}
@@ -52,14 +53,42 @@ export default function Items() {
                 </Link>
               ))}
           </div>
+        </div> */}
+
+        <div id="itemNavFlag">
+          <ul class="no-bullets">
+              <li>CATEGORIES</li>
+              {CATEGORIES.map((category, index) => (
+                <li>
+                  <Link
+                    key={index}
+                    onClick={() => {
+                      setCategory(category);
+                      setSubcategory(null);
+                    }}>
+                    <p>{category.name}</p>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+
+            {/* <div>
+              {category &&
+                category.subcategories.map((subcategory, index) => (
+                  <Link key={index} onClick={() => setSubcategory(subcategory)}>
+                    {subcategory}
+                  </Link>
+                ))}
+            </div> */}
         </div>
-        <div className="grid">
-          {filteredItems.map((item, index) => (
-            <div className="item">
-              <ItemCard key={index} item={item} />
-            </div>
-          ))}
-        </div>
+
+          <div className="grid">
+            {filteredItems.map((item, index) => (
+              <div className="item">
+                <ItemCard key={index} item={item} />
+              </div>
+            ))}
+          </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 .itemCardImage {
-  max-width: 100px;
-  max-height: 90px;
+  max-width: 8em;
+  max-height: 6em;
   align-content: start;
   padding-bottom: 25px;
   /* margin: 8px 0; */
@@ -8,43 +8,20 @@
 a {
   text-decoration: none;
 }
-.block {
-  background-color: #f5f5f5;
-  width: 10em;
-  height: 90px;
-  text-decoration: none;
-  justify-content: space-evenly;
-  justify-items: start;
-  align-content: flex-start;
-  row-gap: 3%;
-  padding-top: 2%;
-  flex-direction: row;
-}
-
-.name {
-  font-size: 0.5em;
-  color: black;
-  align-items: left;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.5em;
-  line-height: 1em;
-}
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 .card {
-  height: 12em;
-  width: 10em;
+  height: 13em;
+  width: 11em;
   font-size: 1.5em;
   color: #e7eadf;
   background-color: #e7eadf;
   border-radius: 10px;
   /* padding: 1em; */
-  margin: 2em;
-  margin-top: 0em;
+  margin: 0 1em 1em 1em;
   display: flex;
   align-items: flex-end;
   background-size: cover;
@@ -54,20 +31,50 @@ a {
   /* border: 7px solid #f5f5f5; */
   text-decoration: none;
 }
-.price {
+.itemContentBlock {
+  background-color: #f5f5f5;
+  width: 11em;
+  height: 90px;
+  text-decoration: none;
+  justify-content: space-evenly;
+  align-items: center;
+  row-gap: 3%;
+  padding-top: 2%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.productInfoText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.productInfoText h1 {
+  font-size: 0.4em;
+  color: black;
+  text-align: left;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  line-height: 1em;
+  font-family: 'PT Serif', serif;
+  max-width: 9em;
+}
+.productInfoText p {
   color: rgb(66, 66, 66);
   font-size: 15px;
-  padding-right: 15px;
   text-decoration: none;
-  text-align: right;
+  margin-top: 0;
 }
-.addto {
+.itemContentBlock button{
   background-color: #a0091b;
-  padding: 10px 25px 10px 25px;
-  width: 10em;
+  padding: 10px;
   font-weight: bold;
   outline: none;
-  /* border-radius: 30px; */
   font-size: 1em;
   color: #f5f5f5;
   font-family: "Quicksand", sans-serif;
@@ -76,7 +83,15 @@ a {
   align-items: center;
   border: none;
   margin-top: 0px;
+  border-radius: 50%;
+  height: fit-content;
+  box-shadow: 2px 2px 15px 0px rgba(0,0,0,0.3);
 }
+
+.itemContentBlock button img{
+  width: 28px;
+}
+
 .card button:hover {
   opacity: 0.7;
 }
