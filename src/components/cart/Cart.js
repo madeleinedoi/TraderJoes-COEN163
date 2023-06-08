@@ -49,7 +49,7 @@ export default function Cart() {
   return (
     <div id="cartBody">
       <section id="checkoutTotalSection">
-        <Link class="backButtonCheckout" href="/items">&lt; Back to catalog</Link>
+        <Link class="backButtonCheckout" to="/items">Back to catalog</Link>
         <h2>Your Total:</h2>
         <p class="costReport">SUBTOTAL {cart.subtotal.toFixed(2)}</p>
         <p class="costReport">TAX {cart.tax.toFixed(2)}</p>
