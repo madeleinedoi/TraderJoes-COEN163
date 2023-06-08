@@ -25,26 +25,22 @@ export default function ItemCard(props) {
               alt={props.item.name}
               src={props.item.imageURL}
             />
-            <div className="block">
-              <div className="name">
-                <h1>{props.item.name}</h1>
-              </div>
-              <div className="price">
-                <p>
-                  ${props.item.price}/{props.item.size} oz
-                </p>
-              </div>
+            <div className="itemContentBlock">
+              <section className="productInfoText">
+                  <h1>{props.item.name}</h1>
+                  <p>
+                    ${props.item.price}/{props.item.size} oz
+                  </p>
+              </section>
+              <button onClick={() => onItemAddToCart()}>
+                <img
+                  src={cartIcon}
+                  alt="shopping cart icon"
+                ></img>
+              </button>
             </div>
           </div>
         </Link>
-        <button class="addto" onClick={() => onItemAddToCart()}>
-          <img
-            class="shoppingLogoIcon"
-            src={cartIcon}
-            alt="shopping cart icon"
-          ></img>
-          Add to cart
-        </button>
       </div>
     </div>
   );

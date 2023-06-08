@@ -302,8 +302,8 @@ export const items = [
     subcategories: ["Sodas & Mixers"],
   },
   {
-    id: "sparkling_white_tea_with_pomegranate_juice",
-    name: "Sparkling White Tea with Pomegranate Juice",
+    id: "white_tea_with_pomegranate_juice",
+    name: "White Tea with Pomegranate Juice",
     description:
       "What do you get when you infuse delicate white tea with a splash of tart pomegranate juice and an abundance of invigorating bubbles? You get Trader Joe’s Sparkling White Tea with Pomegranate Juice Beverage, that’s what!",
     imageURL:
